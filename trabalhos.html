@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Portfólio</title>
+    </head>
+    <body>
+        <script>
+    // Código JavaScript para controlar o carrossel
+    let index = 0;
+
+    function mover(direcao) {
+        const imagens = document.querySelector('.carrossel-imagens');
+        const totalImagens = document.querySelectorAll('.carrossel-imagens img').length;
+        index += direcao;
+
+        // Garantir que o índice seja cíclico
+        if (index < 0) index = totalImagens - 1;
+        if (index >= totalImagens) index = 0;
+
+        // Atualiza a posição das imagens
+        imagens.style.transform = `translateX(${-index * 100}%)`;
+    }
+</script>
+    <main>
+        <h1 align="center">Trabalhos desenvolvidos</h1>
+        <section>
+            <h2>Análises de Dados</h2>
+            <p align="justify">As análises e dashboards foram realizados para a organização<a href="https://datalabe.org/"> datalabe</a>,que promove a democratização de dados, com foco em raça,gênero e território.<br>
+            O software utilizado foi o Google Colab e o Tableau.
+            <ul>
+                <li><a href="Analise_Candidatos.html" target="_blank">Eleições</a></li>
+                <li><a href="AnaliseCagedPCD.html" target="_blank">CAGED 2019</a></li>
+                <li><a href="Analise_Racismo_Ambiental.html" target="_blank">Saneamento Básico e População - Municípios do estado do Rio de Janeiro</a></li>
+                </ul>
+                <br>
+            <h2>Dashboards</h2>
+            <p align = "justify">O Tableau public é uma ferramenta gratuita, que possibilita a criação de dashboards.<br>
+                Com a biblioteca Streamlit e a biblioteca Altair e a linguagem python,podemos criar dashboards, que podem ser visualizados como página da web.</p>
+            <ul>
+                <li><a href="https://public.tableau.com/views/Eleies_2024/Eleies2024?:language=pt-BR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link "target="_blank">Eleições</a></li>
+                <li><a href="https://public.tableau.com/views/Caged_PCD_2019/Painel1?:language=pt-BR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">CAGED PCD 2019</a></li>
+                <li><a href="https://drive.google.com/file/d/1GLnfqtc6Jbt9f5rBhZRgAbfz3IP6fV2c/view?usp=drive_link" target="_blank">Queixas de Saneamento</a></li>
+            </ul><br>
+            <h2>Mapas</h2><br>
+            <div class="carrossel">
+             <div class="carrossel-imagens">
+        <img src="MapaRegioes_RJ.png" alt="Feito no QGIS">
+        <img src="Mapa_UnidadesSaudeRJ.png">
+        <img src="Mapa_Escolas_MuniRJ.png">                              
+    </div><p align="center">Desenvolvidos com o software QGIS</p><br>
+    <button class="prev" onclick="mover(-1)">&#10094;</button>
+    <button class="next" onclick="mover(1)">&#10095;</button>
+</div>
+      <footer><a href ="index.html">voltar</a></footer>        
+           
+        </section>
+
+       
+    </main> 
+</body>
